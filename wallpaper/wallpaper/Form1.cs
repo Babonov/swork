@@ -19,9 +19,10 @@ namespace wallpaper
             InitializeComponent();
         }
 
-        const int SPI_SETDESKWALLPAPER = 20;
+const int SPI_SETDESKWALLPAPER = 20;
 const int SPIF_UPDATEINIFILE = 0x01;
 const int SPIF_SENDWININICHANGE = 0x02;
+int Style;
 
 [DllImport("user32.dll", CharSet = CharSet.Auto)]
 static extern int SystemParametersInfo (int uAction, int uParam, string lpvParam, int fuWinIni);
@@ -44,12 +45,34 @@ static extern int SystemParametersInfo (int uAction, int uParam, string lpvParam
 
         private void button3_Click(object sender, EventArgs e)
         {
-            SetWallpaper("C:\\Users\\MediaMarkt\\Desktop\\семестровая\\pictures\\2.jpg", 2, 0);
+            SetWallpaper("C:\\Users\\MediaMarkt\\Desktop\\семестровая\\pictures\\2.jpg", Style, 0);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            SetWallpaper("C:\\Users\\MediaMarkt\\Desktop\\семестровая\\pictures\\2.jpg", 2, 0);
+            SetWallpaper("C:\\Users\\MediaMarkt\\Desktop\\семестровая\\pictures\\1.jpg", Style, 0);
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            SetWallpaper("C:\\Users\\MediaMarkt\\Desktop\\семестровая\\pictures\\2.jpg", Style, 0);
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           if (comboBox1.SelectedIndex == 0)
+           {
+               Style = 1;
+           }
+
+           if (comboBox1.SelectedIndex == 1)
+           {
+               Style = 2;
+           }
+           if (comboBox1.SelectedIndex == 2)
+           {
+               Style = 3;
+           }
         }
 
 
