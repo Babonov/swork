@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace semestr.Properties
+namespace wallpaper.Properties
 {
 
 

@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Win32;
 
-namespace semestr
+namespace wallpaper
 {
     public partial class Form1 : Form
     {
@@ -16,5 +17,11 @@ namespace semestr
         {
             InitializeComponent();
         }
+
+        public static void SetWallpaper (string path, int style, int tile)
+        {
+            RegistryKey key = Registry.CurrentUser.OpenSubKey("Control Panel\\Desktop");
+        }
+
     }
 }
