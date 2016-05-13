@@ -19,13 +19,13 @@ namespace wallpaper
             InitializeComponent();
         }
 
-const int SPI_SETDESKWALLPAPER = 20;
-const int SPIF_UPDATEINIFILE = 0x01;
-const int SPIF_SENDWININICHANGE = 0x02;
-int Style;
+        const int SPI_SETDESKWALLPAPER = 20;
+        const int SPIF_UPDATEINIFILE = 0x01;
+        const int SPIF_SENDWININICHANGE = 0x02;
+        int Style;
 
-[DllImport("user32.dll", CharSet = CharSet.Auto)]
-static extern int SystemParametersInfo (int uAction, int uParam, string lpvParam, int fuWinIni);
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        static extern int SystemParametersInfo (int uAction, int uParam, string lpvParam, int fuWinIni);
 
         
         public static void SetWallpaper (string path, int style, int tile)
@@ -35,17 +35,6 @@ static extern int SystemParametersInfo (int uAction, int uParam, string lpvParam
             key.SetValue("TileWallpaper", tile.ToString());
             SystemParametersInfo(SPI_SETDESKWALLPAPER, 0, path, SPIF_UPDATEINIFILE | SPIF_SENDWININICHANGE);
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            SetWallpaper("C:\\Users\\MediaMarkt\\Desktop\\семестровая\\pictures\\1.jpg", 1, 0);
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            SetWallpaper("C:\\Users\\MediaMarkt\\Desktop\\семестровая\\pictures\\2.jpg", Style, 0);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -58,21 +47,49 @@ static extern int SystemParametersInfo (int uAction, int uParam, string lpvParam
             SetWallpaper("C:\\Users\\MediaMarkt\\Desktop\\семестровая\\pictures\\2.jpg", Style, 0);
         }
 
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            SetWallpaper("C:\\Users\\MediaMarkt\\Desktop\\семестровая\\pictures\\3.jpg", Style, 0);
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            SetWallpaper("C:\\Users\\MediaMarkt\\Desktop\\семестровая\\pictures\\4.jpg", Style, 0);
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            SetWallpaper("C:\\Users\\MediaMarkt\\Desktop\\семестровая\\pictures\\5.jpg", Style, 0);
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            SetWallpaper("C:\\Users\\MediaMarkt\\Desktop\\семестровая\\pictures\\6.jpg", Style, 0);
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            SetWallpaper("C:\\Users\\MediaMarkt\\Desktop\\семестровая\\pictures\\7.jpg", Style, 0);
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            SetWallpaper("C:\\Users\\MediaMarkt\\Desktop\\семестровая\\pictures\\8.jpg", Style, 0);
+        }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            SetWallpaper("C:\\Users\\MediaMarkt\\Desktop\\семестровая\\pictures\\9.jpg", Style, 0);
+        }
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-           if (comboBox1.SelectedIndex == 0)
-           {
-               Style = 1;
-           }
+            switch (comboBox1.Text)
+            {
+                case "Исходный размер": Style = 1; break;
+                case "Растянуть": Style = 2; break;
+            }
 
-           if (comboBox1.SelectedIndex == 1)
-           {
-               Style = 2;
-           }
-           if (comboBox1.SelectedIndex == 2)
-           {
-               Style = 3;
-           }
         }
 
 
