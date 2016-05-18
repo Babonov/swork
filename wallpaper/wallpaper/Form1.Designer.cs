@@ -76,8 +76,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Исходный размер",
-            "Растянуть",
-            "Замостить"});
+            "Растянуть"});
             this.comboBox1.Location = new System.Drawing.Point(128, 17);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(133, 21);
